@@ -18,18 +18,19 @@ dblp2data = pd.read_csv('Data/DBLP2.csv', encoding = "ISO-8859-1")
 
 ### Part 1 Prepare data
 # Merge both files into one
-#dataframe = pd.concat([acmdata, dblp2data])
-#print(dataframe)
+dataframe = pd.concat([acmdata, dblp2data])
+print(dataframe)
 
 # Check if values are missing.
 # Have a look at https://towardsdatascience.com/data-cleaning-with-python-and-pandas-detecting-missing-values-3e9c6ebcf78b
-acmdata.dropna(
+dataframe.dropna(
     axis=0,
     how='any', # all = row completely empty, any = a single cell empty
     subset=None,
     inplace=True
 )
-#print(acmdata)
+print("Missing values")
+print(dataframe)
 
 # Replace umlaut charaters 
 # Have a look at https://towardsdatascience.com/data-processing-example-using-python-bfbe6f713d9c , 
@@ -42,12 +43,15 @@ dictionary = {'&#196;': 'Ä', '&#228;': 'ä', '&#203;': 'Ë', '&#235;': 'ë', '&
               '&#231;': 'ç', '&#200;': 'È', '&#232;': 'è', '&#201;': 'É', '&#234;': 'ê', '&#209;': 'Ñ',
               '&#241;': 'ñ', '&#210;': 'Ò', '&#242;': 'ò', '&#211;': 'Ó', '&#243;': 'ó', '&#212;': 'Ô',
               '&#244;': 'ô', '&#245;': 'õ', '&#195;': 'Ÿ', '&#255;': 'ÿ', '&mdash;': '—'}
-acmdata.replace(dictionary, regex=True, inplace=True)
-print(acmdata)
+dataframe.replace(dictionary, regex=True, inplace=True)
+print("replace umlaut")
+print(dataframe)
 
 # Check for duplicates
 # Have a look at https://thispointer.com/python-3-ways-to-check-if-there-are-duplicates-in-a-list/
-#print(acmdata.drop_duplicates())
+dataframe = dataframe.drop_duplicates()
+print('drop dublicate')
+print(dataframe)
 
 
 ### Part 2 Implement a blocking scheme
