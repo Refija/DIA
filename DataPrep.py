@@ -12,7 +12,10 @@ dblp2data = pd.read_csv('Data/DBLP2.csv', encoding = "ISO-8859-1")
 # https://textblob.readthedocs.io/en/dev/
 # https://stanfordnlp.github.io/CoreNLP/
 # https://github.com/RaRe-Technologies/gensim
-# 
+# https://github.com/natalieahn/namematcher
+# https://stackoverflow.com/questions/46186051/python-fuzzy-matching-of-names-with-only-first-initials
+# https://stackoverflow.com/questions/17531684/n-grams-in-python-four-five-six-grams
+
 
 
 
@@ -63,14 +66,12 @@ dblp2data.replace(dictionary, regex=True, inplace=True)
 # Check for duplicates
 # Have a look at https://thispointer.com/python-3-ways-to-check-if-there-are-duplicates-in-a-list/
 acmdata = acmdata.drop_duplicates()
-print('drop dublicate')
-print(acmdata)
+#print('drop dublicate')
+#print(acmdata)
 dblp2data = dblp2data.drop_duplicates()
-print('drop dublicate')
-print(dblp2data)
+#print('drop dublicate')
+#print(dblp2data)
 
-
-### Part 2 Implement a blocking scheme
 
 # Check for abbreviations and similar venue
 # Have a look at
@@ -79,3 +80,10 @@ print(dblp2data)
 # Check for the "order" eg venue switched
 # Have a look at 
 
+### Part 2 Implement a blocking scheme
+# blocking scheme = title, authors, venue, year
+# example project https://pypi.org/project/schema-matching/
+# according to https://helios2.mi.parisdescartes.fr/~themisp/publications/csur20-blockingfiltering.pdf
+# Step 1: candidate selection step
+# Step 2: candidate matching step
+# 
