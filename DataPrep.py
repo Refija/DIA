@@ -23,11 +23,11 @@ dblp2data = pd.read_csv('Data/DBLP2.csv', encoding="ISO-8859-1")
 # Match = 1551(69,73%), 2, 0.70 false positive 238(10,70%)
 # Match = 1003(44,09%), 2, 0.80 false positive 089(04,00%)
 # Match = 1159(52,11%), 2, 0.75 false positive 201(09,03%)
-# Match = 1809(81,33%), 3, 0.55 false positive 254(11,42%) <-
+# Match = 1809(81,33%), N=3, Threshold=0.55 with false positive = 254(11,42%) and missing = 161(07,23%) <-
 # Match = 1695(76,21%), 3, 0.57 false positive 251(11,28%)
 # Match = 1468(66,00%), 3, 0.60 false positive 236(10,61%)
 # Match = 1187(53,37%), 3, 0.65 false positive 206(09,26%)
-# Match = 1832(82,37%), 4, 0.45 false positive 271(12,18%) <-
+# Match = 1832(82,37%), N=4, Threshold=0.45 with false positive = 271(12,18%) and missing = 121(05,44%) <-
 # Match = 1513(68,03%), 4, 0.50 false positive 247(11,10%)
 # Match = 1400(62,94%), 4, 0.52 false positive 237(10,64%)
 
