@@ -1,25 +1,9 @@
 import csv
-
 import ngram
 import numpy
 import pandas as pd
-import numpy as np
-import ngram as ng
 
 perfectmatch = pd.read_csv('Data/DBLP-ACM_perfectMapping.csv')
-perfect = []
-
-for item in perfectmatch.iterrows():
-    #pgrint(item[1])
-    perfect.append([item[1]['idDBLP'], item[1]['idACM']])
-
-#for pm in perfectmatch:
-#    print(pm)
-    #perfect.append(pm)
-#print(perfect)
-perfect.sort(key=lambda x: x[0])
-pd.DataFrame(perfect).to_csv('perfect.csv', index=False, sep=',', quoting=csv.QUOTE_NONNUMERIC, header=["idDBLP", "idACM"])
-
 
 acmdata = pd.read_csv('Data/ACM.csv')
 # print(acmdata)
@@ -35,6 +19,23 @@ dblp2data = pd.read_csv('Data/DBLP2.csv', encoding="ISO-8859-1")
 # https://stackoverflow.com/questions/46186051/python-fuzzy-matching-of-names-with-only-first-initials
 # https://stackoverflow.com/questions/17531684/n-grams-in-python-four-five-six-grams
 
+# Input parameter
+# Match = 1551(69,73%), 2, 0.70 false positive 238(10,70%)
+# Match = 1003(44,09%), 2, 0.80 false positive 089(04,00%)
+# Match = 1159(52,11%), 2, 0.75 false positive 201(09,03%)
+# Match = 1809(81,33%), 3, 0.55 false positive 254(11,42%) <-
+# Match = 1695(76,21%), 3, 0.57 false positive 251(11,28%)
+# Match = 1468(66,00%), 3, 0.60 false positive 236(10,61%)
+# Match = 1187(53,37%), 3, 0.65 false positive 206(09,26%)
+# Match = 1832(82,37%), 4, 0.45 false positive 271(12,18%) <-
+# Match = 1513(68,03%), 4, 0.50 false positive 247(11,10%)
+# Match = 1400(62,94%), 4, 0.52 false positive 237(10,64%)
+
+# Best match values
+ngram_size = 4
+match_percentage = 0.45
+
+## Begin of pipeline
 # Check if values are missing.
 # Have a look at https://towardsdatascience.com/data-cleaning-with-python-and-pandas-detecting-missing-values-3e9c6ebcf78b
 acmdata.dropna(
@@ -250,9 +251,9 @@ for item in acmdata.iterrows():
         print("swap done")
 # print(global_acmdata)
 
+# Check for swapped values, not the case but for completeness
 # now after possible(not in our case but for completeness) swap, create new dict with correct all correct hashes
 global_acmdata = {}
-# Check for swapped values, not the case but for completeness
 for item in acmdata.iterrows():
     # create hashes
     venueHash = str(hash(item[1]['venue']))
@@ -312,7 +313,6 @@ for venueHash in hashlist_dblp2data:
 # print(new_dbl2dict)
 
 # combine hashlists to iterate over all venues
-# first_list + list(set(second_list) - set(first_list))
 dblp2data_hashes = []
 acmdata_hashes = []
 for item in hashlist_dblp2data:
@@ -329,25 +329,75 @@ result = []
 for ahash in array_hashes:
     for acm in new_acmdict[ahash]:
         for dbl in new_dbl2dict[ahash]:
-            match = ngram.NGram.compare(acm[0], dbl[0], N=3) #N=2
+            match = ngram.NGram.compare(acm[0], dbl[0], N=ngram_size) #N=2
             #if match > 0.7:
             #    print("compare ->" + acm[0] + "<- with ->" + dbl[0] + "<-")
             #    print("score is " + str(match))
-            if match > 0.6: #0.6,N=2
+            #Best macht till now = N=3, 0.62
+            if match > match_percentage: #0.6,N=2
                 result.append([dbl[1]['id'], acm[1]['id']])
-            # only 886 matches...
+            # With hasche of Titles only 886 matches...
             #if acm[0] == dbl[0]:
             #    print("match")
             #    result.append([dbl[1]['id'], acm[1]['id']])
-#print("\"idDBLP\",\"idACM\"")
-#for r in result:
-#    print("\""+r[0]+"\","+r[1])
-
-#arr = np.asarray([ [7,8,9], [5,8,9] ])
 
 result.sort(key=lambda x: x[0])
 pd.DataFrame(result).to_csv('result.csv', index=False, sep=',', quoting=csv.QUOTE_NONNUMERIC, header=["idDBLP", "idACM"])
-#print(result)
-#print(len(result))
 
-#print(perfectmatch)
+perfect = []
+
+for item in perfectmatch.iterrows():
+    perfect.append([item[1]['idDBLP'], item[1]['idACM']])
+
+perfect.sort(key=lambda x: x[0])
+pd.DataFrame(perfect).to_csv('perfect.csv', index=False, sep=',', quoting=csv.QUOTE_NONNUMERIC, header=["idDBLP", "idACM"])
+
+
+
+# Print results
+print("Parameters are:")
+print("Size of ngrams = " + str(ngram_size))
+print("Percentage for matching = " + str(match_percentage))
+
+pfmatch = pd.read_csv('perfect.csv')
+mymatch = pd.read_csv('result.csv')
+
+result = []
+for item in mymatch.iterrows():
+    result.append([item[1]['idDBLP'], item[1]['idACM']])
+result.sort(key=lambda x: x[0])
+
+perfect = []
+for item in pfmatch.iterrows():
+    perfect.append([item[1]['idDBLP'], item[1]['idACM']])
+perfect.sort(key=lambda x: x[0])
+
+# Amount of records
+print("Size Perfect = " + str(len(perfect)))
+print("Size Result  = " + str(len(result)))
+
+# Find nr. of positive matches
+positive_matches = 0
+for pf in perfect:
+    for rs in result:
+        if pf[0] == rs[0] and pf[1] == rs[1]:
+            positive_matches = positive_matches + 1
+print("Number of positive matches = " + str(positive_matches))
+print("Percent of Positive Matches = " + str(100 * float(positive_matches / len(perfect))) + "%.")
+
+false_positive = 0
+# Find nr. of false positive matches
+for rs in result:
+    found = False
+    for pf in perfect:
+        if rs[0] == pf[0] and rs[1] == pf[1]:
+            found = True
+    if not found:
+        false_positive = false_positive + 1
+print("Number of false positive matches = " + str(false_positive))
+print("Percentage of false positive matches = " + str(100 * float((false_positive / len(perfect)))) + "%.")
+
+# Find nr. of missing matches
+print("Number of missing matches = " + str(len(perfect) - positive_matches - false_positive))
+print("Percent of missing matches = " +
+      str(100 * float(int(len(perfect) - positive_matches - false_positive) / len(perfect))) + "%.")
