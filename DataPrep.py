@@ -325,6 +325,7 @@ array_hashes = []
 for ihash in int_hashes:
     array_hashes.append(ihash)
 result = []
+count = []
 
 for ahash in array_hashes:
     for acm in new_acmdict[ahash]:
@@ -336,11 +337,13 @@ for ahash in array_hashes:
             #Best macht till now = N=3, 0.62
             if match > match_percentage: #0.6,N=2
                 result.append([dbl[1]['id'], acm[1]['id']])
+                count.append(match)
             # With hasche of Titles only 886 matches...
             #if acm[0] == dbl[0]:
             #    print("match")
             #    result.append([dbl[1]['id'], acm[1]['id']])
 
+pd.DataFrame(count).to_csv('score.csv', header=["Score"])
 result.sort(key=lambda x: x[0])
 pd.DataFrame(result).to_csv('result.csv', index=False, sep=',', quoting=csv.QUOTE_NONNUMERIC, header=["idDBLP", "idACM"])
 
