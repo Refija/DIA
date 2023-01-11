@@ -102,6 +102,7 @@ y = array[:,2]
 model = KNeighborsClassifier(n_neighbors=45)
 model.fit(X, y)
 predict_model = model.predict(X)
+print("Accuracy score for KNN predicted")
 print(accuracy_score(y, predict_model))
 
 # split the data with 20% of the data for testing, 80% for training and validation
@@ -113,15 +114,18 @@ model.fit(x_train, y_train)
 
 # evaluate the model on the second set of data
 validation_model = model.predict(x_test)
+print("Accuracy score for KNN validated")
 print(accuracy_score(y_test, validation_model))
 
 validation_model = model.fit(x_test, y_test).predict(x_train)
 test_model = model.fit(x_train, y_train).predict(x_test)
+print("Accuracy score for KNN predicted and tested")
 print(accuracy_score(y_train, validation_model), accuracy_score(y_test, test_model))
 
 #Random forest model
 rF_model = RandomForestClassifier(random_state=2)
 rF_model.fit(x_train, y_train)
+print("Accuracy score for RandomForest")
 print(rF_model.score(x_test, y_test))
 
 param_grid = {
@@ -135,10 +139,11 @@ param_grid = {
 
 rF_grid = GridSearchCV(estimator = rF_model, param_grid = param_grid, cv = 3, verbose=2,  n_jobs = -1)
 rF_grid.fit(x_train, y_train)
-
+print("RandomForest grid search - best parameters")
 print(rF_grid.best_params_)
 
 rfClass = RandomForestClassifier(max_depth = 2, max_features = 'sqrt', min_samples_leaf = 2, min_samples_split = 2, n_estimators = 5)
 rfClass.fit(x_train,y_train)
+print("Accuracy score for RandomForest with parameters that give the best accuracy")
 print(rfClass.score(x_test, y_test))
 #when tune the best parameters given by grid search, the score is higher for 0.03 (3%)
