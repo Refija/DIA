@@ -15,7 +15,7 @@ Datasets from "DBLP-ACM":
 "DBLP-ACM_perfectMapping.csv", 2225 records, attributes ("idDBLP","idACM")
 
 
-Task 2 is built upn the task 1. Task 1 must be run first in order to generate 2 csv files that are used for the task 2, 
+Task 2 is built upon the task 1. Task 1 must be run first in order to generate 2 csv files that are used for the task 2, 
 "results.csv" that gives matching records from 2 datasets and "score.scv" with similarity score between the records.
 
 Algorithms : K-Nearest Neighbors and Random Forest classifier for accuracy comparison
