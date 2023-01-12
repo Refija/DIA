@@ -14,6 +14,9 @@ Datasets from "DBLP-ACM":
 "ACM.csv", 2617 records, attributes ("id","title","authors","venue","year")
 "DBLP-ACM_perfectMapping.csv", 2225 records, attributes ("idDBLP","idACM")
 
+Project description: The task is to create a pipeline for entity matching by following all the necessary
+steps of cleaning, blocking and similarity matching. Once such pipeline is ready it can be used to
+train a ML model for predicting new records. 
 
 Task 2 is built upon the task 1. Task 1 must be run first in order to generate 2 csv files that are used for the task 2, 
 "results.csv" that gives matching records from 2 datasets and "score.scv" with similarity score between the records.
