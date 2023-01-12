@@ -1,0 +1,21 @@
+Data Integration and Large Scale Analysis
+
+Authors: Günther Moser and Refija Oflaz
+
+Task 2: ML model for Entity matching
+
+Visual studio Code - IDE
+Python - programming language
+
+"DBLP-ACM" - dataset ( https://dbs.uni-leipzig.de/research/projects/object_matching/benchmark_datasets_for_entity_resolution )
+
+Datasets from "DBLP-ACM":
+"DBLP2.csv", 2295 records, attributes ("id","title","authors","venue","year")
+"ACM.csv", 2617 records, attributes ("id","title","authors","venue","year")
+"DBLP-ACM_perfectMapping.csv", 2225 records, attributes ("idDBLP","idACM")
+
+
+Task 2 is built upn the task 1. Task 1 must be run first in order to generate 2 csv files that are used for the task 2, 
+"results.csv" that gives matching records from 2 datasets and "score.scv" with similarity score between the records.
+
+Algorithms : K-Nearest Neighbors and Random Forest classifier for accuracy comparison
