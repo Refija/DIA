@@ -18,9 +18,11 @@
 "conf/sigmod/Aggarwal02",564743
 "conf/sigmod/AggarwalPWYP99",304188
 "conf/sigmod/AggarwalY01",375668
+"conf/sigmod/AgichteinG03",872851
 "conf/sigmod/AgichteinGV01",375774
 "conf/sigmod/AgrawalASY97",253355
 "conf/sigmod/AgrawalCD02",564782
+"conf/sigmod/AgrawalCFGHIIMMSS94",191972
 "conf/sigmod/AgrawalCN01",375769
 "conf/sigmod/AgrawalES03",872771
 "conf/sigmod/AgrawalGGR98",276314
@@ -33,10 +35,12 @@
 "conf/sigmod/Amer-YahiaFSX03",872852
 "conf/sigmod/AndersonAF98",276365
 "conf/sigmod/AndersonBKW98",276347
+"conf/sigmod/AnkerstBKS99",304187
 "conf/sigmod/AnnamalaiCD00",335463
 "conf/sigmod/AntonJLPZZ02",564762
 "conf/sigmod/ArasuG03",872799
 "conf/sigmod/Arpaci-DusseauACHP97",253322
+"conf/sigmod/Atkinson95",223874
 "conf/sigmod/Aulakh98",276367
 "conf/sigmod/AvnurHLORRRW98",276383
 "conf/sigmod/BabcockCD03",872822
@@ -89,6 +93,7 @@
 "conf/sigmod/Brewer98",276372
 "conf/sigmod/BrinDG95",223855
 "conf/sigmod/BrinMS97",253327
+"conf/sigmod/BrinkhoffKSS94a",191988
 "conf/sigmod/BrodskyK95",223788
 "conf/sigmod/BrodskySCE99",304582
 "conf/sigmod/Brown99",304236
@@ -127,6 +132,7 @@
 "conf/sigmod/ChangBCLLS00",335433
 "conf/sigmod/ChangH02",564731
 "conf/sigmod/Chaudhuri97",253374
+"conf/sigmod/ChaudhuriD97",253373
 "conf/sigmod/ChaudhuriDN01",375694
 "conf/sigmod/ChaudhuriDY95",223856
 "conf/sigmod/ChaudhuriG96",233323
@@ -134,10 +140,12 @@
 "conf/sigmod/ChaudhuriGS03",872802
 "conf/sigmod/ChaudhuriKN03",872831
 "conf/sigmod/ChaudhuriMN98",276343
+"conf/sigmod/ChaudhuriMN99",304206
 "conf/sigmod/ChaudhuriN98a",276378
 "conf/sigmod/ChawatheG97",253266
 "conf/sigmod/ChawatheRGW96",233366
 "conf/sigmod/ChenCPPSTM00",335466
+"conf/sigmod/ChenGK01",375692
 "conf/sigmod/ChenGM01",375688
 "conf/sigmod/ChenGMV02",564710
 "conf/sigmod/ChenJDTW00",335432
@@ -196,6 +204,7 @@
 "conf/sigmod/DogacTPPLKTK02",564750
 "conf/sigmod/Doherty98",276358
 "conf/sigmod/DohertyHR96",233344
+"conf/sigmod/DraperHW01",375744
 "conf/sigmod/DreyerDS95",223902
 "conf/sigmod/Dullmann99",304229
 "conf/sigmod/Dyreson03",872779
@@ -248,6 +257,7 @@
 "conf/sigmod/GotoK03",872837
 "conf/sigmod/GoyalHKMS96",233369
 "conf/sigmod/GoyalHKMSZ97",253377
+"conf/sigmod/GravanoCGP97",253299
 "conf/sigmod/GravanoGT94",191869
 "conf/sigmod/Gray95",223864
 "conf/sigmod/GrayHOS96",233330
@@ -259,6 +269,7 @@
 "conf/sigmod/GrumbachRS98",276324
 "conf/sigmod/Grust02",564705
 "conf/sigmod/GuhaJKSY02",564725
+"conf/sigmod/GuhaRS98",276312
 "conf/sigmod/GunopulosKTD00",335448
 "conf/sigmod/GuoSBS03",872762
 "conf/sigmod/GuptaHR97",253366
@@ -307,6 +318,7 @@
 "conf/sigmod/Ivinskis95",223862
 "conf/sigmod/JaedickeM98",276338
 "conf/sigmod/Jagadish94",191991
+"conf/sigmod/Jagadish94",181566
 "conf/sigmod/JagadishJOT01",375687
 "conf/sigmod/JagadishKS00",335434
 "conf/sigmod/JagadishLMSV99",304194
@@ -353,6 +365,7 @@
 "conf/sigmod/LahiriJJC98",276366
 "conf/sigmod/LakhamrajuRSS00",335381
 "conf/sigmod/LakshmananNHP99",304196
+"conf/sigmod/LakshmananPZ03",872768
 "conf/sigmod/LakshmananPZ03a",872843
 "conf/sigmod/LangS01",375716
 "conf/sigmod/LarsonG03",872848
@@ -362,6 +375,7 @@
 "conf/sigmod/LeeWMS01",375709
 "conf/sigmod/LeflerSW96",280354
 "conf/sigmod/LehnerSPC00",335454
+"conf/sigmod/Levine95",223878
 "conf/sigmod/LiBKN03",872820
 "conf/sigmod/LiC95",223897
 "conf/sigmod/LiGS02",564711
@@ -378,8 +392,10 @@
 "conf/sigmod/LuoEHN02",564721
 "conf/sigmod/LuoKMPWLN02",564763
 "conf/sigmod/MaddenH02",564776
+"conf/sigmod/MaddenSHR02",603884
 "conf/sigmod/MaddenSHR02",564698
 "conf/sigmod/Maguire01",375742
+"conf/sigmod/MaheshwariL97",253338
 "conf/sigmod/Mamoulis03",872778
 "conf/sigmod/MamoulisP99",304183
 "conf/sigmod/MankuRL99",304204
@@ -393,6 +409,7 @@
 "conf/sigmod/Miller98",276322
 "conf/sigmod/MiloAABN03",872793
 "conf/sigmod/MinPC03",872775
+"conf/sigmod/MissikoffT94",191958
 "conf/sigmod/MistryRSR01",375703
 "conf/sigmod/Mohan02",564796
 "conf/sigmod/Mohan94",191990
@@ -415,6 +432,7 @@
 "conf/sigmod/NgWY01",375666
 "conf/sigmod/NguyenACP01",375723
 "conf/sigmod/NguyenS96",233371
+"conf/sigmod/Nori00",335474
 "conf/sigmod/Norrie95",223883
 "conf/sigmod/NybergBCGL94",191884
 "conf/sigmod/ONeilQ97",253268
@@ -500,6 +518,7 @@
 "conf/sigmod/SismanisDRK02",564745
 "conf/sigmod/SistlaW95",223844
 "conf/sigmod/SlivinskasJS01",375678
+"conf/sigmod/Smith01",375814
 "conf/sigmod/Spiro98",276359
 "conf/sigmod/Squire95",223869
 "conf/sigmod/SrikantA96",233311
@@ -560,7 +579,6 @@
 "conf/sigmod/YerneniLGU99",304221
 "conf/sigmod/YuMWL01",375684
 "conf/sigmod/ZadorozhnyRVUB02",564702
-"conf/sigmod/ZaharioudakisC97",253269
 "conf/sigmod/ZaianeHLCC98",276388
 "conf/sigmod/ZhangDWEMPMDR03",872861
 "conf/sigmod/ZhangMCMR02",564767
@@ -716,6 +734,7 @@
 "conf/vldb/ChatziantoniouR96",673628
 "conf/vldb/ChatziantoniouR97",671003
 "conf/vldb/ChaudhuriG99",671359
+"conf/vldb/ChaudhuriGS95",671193
 "conf/vldb/ChaudhuriGS95",673312
 "conf/vldb/ChaudhuriN97",673646
 "conf/vldb/ChaudhuriS01",672044
@@ -815,6 +834,7 @@
 "conf/vldb/GarofalakisG01",672356
 "conf/vldb/GarofalakisI97",671004
 "conf/vldb/GarofalakisIO98",671193
+"conf/vldb/GarofalakisIO98",673312
 "conf/vldb/GarofalakisOS97",758368
 "conf/vldb/GarofalakisRS99",671514
 "conf/vldb/Gawlick96",673334
@@ -1033,6 +1053,7 @@
 "conf/vldb/Novaretti01",672196
 "conf/vldb/OConnellWG01",672185
 "conf/vldb/Objectivity98",758372
+"conf/vldb/Objectivity98",671174
 "conf/vldb/Ogawa96",673320
 "conf/vldb/OlstonW00",671877
 "conf/vldb/OoiGT98",671029
@@ -1049,6 +1070,7 @@
 "conf/vldb/PantiSG00",671693
 "conf/vldb/PapadiasMD98",671163
 "conf/vldb/PapadiasT01",672363
+"conf/vldb/PapadiasZMT03",673159
 "conf/vldb/PapakonstantinouAG96",673481
 "conf/vldb/PappasC00",671850
 "conf/vldb/PardonA00",671860
@@ -1061,6 +1083,7 @@
 "conf/vldb/PfoserJT00",672019
 "conf/vldb/PirotteZMY94",672997
 "conf/vldb/PitouraC99",671504
+"conf/vldb/Pogue98",758372
 "conf/vldb/Pogue98",671174
 "conf/vldb/PoosalaI96",673321
 "conf/vldb/PoosalaI97",673638
@@ -1100,9 +1123,12 @@
 "conf/vldb/SahuguetA99",671350
 "conf/vldb/SakuraiYKU01",672024
 "conf/vldb/SakuraiYUK00",671676
+"conf/vldb/SakuraiYUK00",673502
+"conf/vldb/Sarawagi95",673632
 "conf/vldb/Sarawagi95",673159
 "conf/vldb/Sarawagi99",671500
 "conf/vldb/SarawagiS96",673632
+"conf/vldb/SarawagiS96",673159
 "conf/vldb/SatheS01",672366
 "conf/vldb/SavasereON95",673300
 "conf/vldb/SavasereON95",672836
@@ -1230,6 +1256,7 @@
 "conf/vldb/ZouS98",671182
 "conf/vldb/ZurekS99",671665
 "journals/sigmod/AbelTK97",248605
+"journals/sigmod/Aberer01",603869
 "journals/sigmod/Aberer03b",601865
 "journals/sigmod/Aberer03b",604274
 "journals/sigmod/Aberer03b",507353
@@ -1258,6 +1285,7 @@
 "journals/sigmod/AlonsoCIM95",219742
 "journals/sigmod/Anisimov03",945741
 "journals/sigmod/Anonymous96",381900
+"journals/sigmod/AnyanwuS02",637418
 "journals/sigmod/ArenasKKKMM03",945733
 "journals/sigmod/ArpinarD00",362098
 "journals/sigmod/AshishK97",271078
@@ -1286,6 +1314,7 @@
 "journals/sigmod/BollKB98",306119
 "journals/sigmod/BonifatiC00",344822
 "journals/sigmod/BonnetBDL03",959067
+"journals/sigmod/BoscMP01",373708
 "journals/sigmod/BoucelmaCGJLL02",637431
 "journals/sigmod/BrunieK96",234895
 "journals/sigmod/BuchnerM98",306124
@@ -1302,6 +1331,7 @@
 "journals/sigmod/Cardelli01",604278
 "journals/sigmod/CareyS99",310071
 "journals/sigmod/CarmelMS01",373705
+"journals/sigmod/CasatiDS00",369276
 "journals/sigmod/CeriFP99",310064
 "journals/sigmod/ChakravarthyAEFO03",641006
 "journals/sigmod/ChangGKRS98",290607
@@ -1334,6 +1364,7 @@
 "journals/sigmod/DadamK97",271096
 "journals/sigmod/Danish98",306103
 "journals/sigmod/Darwen96",245886
+"journals/sigmod/Darwen96",234890
 "journals/sigmod/DarwenD95",202667
 "journals/sigmod/Date03",959061
 "journals/sigmod/Date96",245885
@@ -1363,6 +1394,7 @@
 "journals/sigmod/EnglertGH95",219760
 "journals/sigmod/Etzion99",344820
 "journals/sigmod/Fagin02",565143
+"journals/sigmod/Fankhauser01",603870
 "journals/sigmod/FengJH01",373691
 "journals/sigmod/FifeG03",776991
 "journals/sigmod/FininJ02",637416
@@ -1372,6 +1404,7 @@
 "journals/sigmod/ForteHWDCVHFS99",309870
 "journals/sigmod/FowlerPNB99",310060
 "journals/sigmod/FrankGGJKLMNPSSSTW99",333609
+"journals/sigmod/FreemanG96",381893
 "journals/sigmod/FrewD97",248609
 "journals/sigmod/Gal99",310061
 "journals/sigmod/GalianoM03",959080
@@ -1418,6 +1451,7 @@
 "journals/sigmod/HummerLW02",507345
 "journals/sigmod/Huyn01",603880
 "journals/sigmod/Ioannidis96",245890
+"journals/sigmod/Ioannidis96",245888
 "journals/sigmod/JainH94",190638
 "journals/sigmod/JajodiaBBKMSW97",271095
 "journals/sigmod/Jannink95",202666
@@ -1450,6 +1484,7 @@
 "journals/sigmod/Lee95",212008
 "journals/sigmod/LeeC00",362140
 "journals/sigmod/LeeF01",604270
+"journals/sigmod/LenzVJS03",344825
 "journals/sigmod/LenzVJS03",959083
 "journals/sigmod/LenzeriniNNS01",290595
 "journals/sigmod/Libkin99",344850
@@ -1471,6 +1506,7 @@
 "journals/sigmod/McClatcheyV97",271087
 "journals/sigmod/McHughAGQW97",262770
 "journals/sigmod/McHughW97",271082
+"journals/sigmod/MedeirosP94",191991
 "journals/sigmod/MedeirosP94",181566
 "journals/sigmod/MeersmanS02",945727
 "journals/sigmod/MeltonE01",604280
@@ -1494,7 +1530,6 @@
 "journals/sigmod/NorrieBSW94",181567
 "journals/sigmod/OConnellW03",640991
 "journals/sigmod/OoiST03",945734
-"journals/sigmod/OrlandicLS02",565120
 "journals/sigmod/Ouksel03",945735
 "journals/sigmod/PaepckeGRC00",344828
 "journals/sigmod/Palpanas00",362142
@@ -1504,6 +1539,7 @@
 "journals/sigmod/PhatakSSS96",381897
 "journals/sigmod/PissinouSEMOPSTD94",181557
 "journals/sigmod/PitouraAPSV03",945737
+"journals/sigmod/PitouraB95",212015
 "journals/sigmod/PoessF00",369291
 "journals/sigmod/PossasMCR00",369278
 "journals/sigmod/PourabbasR00",344799
@@ -1752,7 +1788,6 @@
 "journals/tods/BaralisW00",363954
 "journals/tods/BellNNS96",232691
 "journals/tods/BeneventanoBS03",762472
-"journals/tods/BertinoBFS98",293151
 "journals/tods/BohlenJS00",377665
 "journals/tods/Bohm00",357776
 "journals/tods/BrightHP94",176569
@@ -1762,6 +1797,7 @@
 "journals/tods/CasatiCPP99",328996
 "journals/tods/CastanoAFP98",293150
 "journals/tods/CeriFPT94",185828
+"journals/tods/CeriFPT95",185828
 "journals/tods/ChakrabartiKMP02",568520
 "journals/tods/ChaudhuriS99",320249
 "journals/tods/Chen95",202110
@@ -1838,6 +1874,7 @@
 "journals/tods/PolyzoisG94",185836
 "journals/tods/RaschidL96",236714
 "journals/tods/Revesz98",288088
+"journals/tods/RosenthalR94",176568
 "journals/tods/Ross96",232628
 "journals/tods/SalemGS94",174639
 "journals/tods/SchuldtABS02",507236
@@ -1952,6 +1989,7 @@
 "journals/vldb/DoanMDDH03",953241
 "journals/vldb/EvangelidisS97",673316
 "journals/vldb/EyalM01",767135
+"journals/vldb/FahlR97",672203
 "journals/vldb/FengYLH02",767131
 "journals/vldb/FernandezFLS00",765222
 "journals/vldb/FerrariAABC02",767097
@@ -2011,6 +2049,7 @@
 "journals/vldb/MehrotraKS97",765553
 "journals/vldb/MihailaRT02",767096
 "journals/vldb/MirbelPSTV00",765230
+"journals/vldb/MuthOPW00",671026
 "journals/vldb/MylopoulosCPST96",765853
 "journals/vldb/NanopoulosM02",767130
 "journals/vldb/Navarro02",767095
@@ -2060,5 +2099,6 @@
 "journals/vldb/VerykiosME03",775455
 "journals/vldb/WangW01",765508
 "journals/vldb/WhangKW94",615187
+"journals/vldb/WidomS00",764213
 "journals/vldb/YangW03",950494
 "journals/vldb/ZezulaSAR98",765541

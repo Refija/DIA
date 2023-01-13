@@ -4,12 +4,8 @@ import numpy
 import pandas as pd
 
 perfectmatch = pd.read_csv('Data/DBLP-ACM_perfectMapping.csv')
-
 acmdata = pd.read_csv('Data/ACM.csv')
-# print(acmdata)
-
 dblp2data = pd.read_csv('Data/DBLP2.csv', encoding="ISO-8859-1")
-# print(dblp2data)
 
 ### Part 0 Useful links
 # https://textblob.readthedocs.io/en/dev/
@@ -44,17 +40,12 @@ acmdata.dropna(
     subset=None,
     inplace=True
 )
-# print("Missing values")
-# print(acmdata)
 dblp2data.dropna(
     axis=0,
     how='any',  # all = row completely empty, any = a single cell empty
     subset=None,
     inplace=True
 )
-# print("Missing values")
-# print(acmdata)
-
 
 # Replace umlaut charaters
 # Have a look at https://towardsdatascience.com/data-processing-example-using-python-bfbe6f713d9c ,
@@ -68,20 +59,12 @@ dictionary = {'&#196;': 'Ä', '&#228;': 'ä', '&#203;': 'Ë', '&#235;': 'ë', '&
               '&#241;': 'ñ', '&#210;': 'Ò', '&#242;': 'ò', '&#211;': 'Ó', '&#243;': 'ó', '&#212;': 'Ô',
               '&#244;': 'ô', '&#245;': 'õ', '&#195;': 'Ÿ', '&#255;': 'ÿ', '&mdash;': '—'}
 acmdata.replace(dictionary, regex=True, inplace=True)
-# print("replace umlaut")
-# print(dataframe)
 dblp2data.replace(dictionary, regex=True, inplace=True)
-# print("replace umlaut")
-# print(dataframe)
 
 # Check for duplicates
 # Have a look at https://thispointer.com/python-3-ways-to-check-if-there-are-duplicates-in-a-list/
 acmdata = acmdata.drop_duplicates()
-# print('drop dublicate')
-# print(acmdata)
 dblp2data = dblp2data.drop_duplicates()
-# print('drop dublicate')
-# print(dblp2data)
 
 # Check for abbreviations and similar venue
 dictionary = {'Inc\.': 'Incoperated', 'vs\.': 'versus', 'ed\.': 'edition', 'Jr\.': 'Junior', 'Corp\.': 'Corporation',
@@ -98,8 +81,6 @@ dblp2data.replace(dictionary, regex=True, inplace=True)
 # Step 0: same venue strings for comparison
 acmdata_venue_strings = acmdata['venue'].unique()
 dblp2data_venue_strings = dblp2data['venue'].unique()
-# print(acmdata_venue_strings)
-# print(dblp2data_venue_strings)
 
 for acm_venue in acmdata_venue_strings:
     for dbl_venue in dblp2data_venue_strings:
@@ -157,7 +138,6 @@ for item in dblp2data.iterrows():
         global_dblp2data[venueHash] = value
     else:
         global_dblp2data[venueHash] = [item[1]]
-# print(global_dblp2data)
 
 # Check if venue is really the venue value
 for item in dblp2data.iterrows():
@@ -179,7 +159,6 @@ for item in dblp2data.iterrows():
         item[1]['venue'] = item[1]['year']
         item[1]['year'] = tmp
         print("swap done")
-# print(global_dblp2data)
 
 # now after possible(not in our case but for completeness) swap, create new dict with correct all correct hashes
 global_dblp2data = {}
@@ -227,7 +206,6 @@ for item in acmdata.iterrows():
         global_acmdata[venueHash] = value
     else:
         global_acmdata[venueHash] = [item[1]]
-# print(global_dblp2data)
 
 # Check if venue is really the venue value
 for item in acmdata.iterrows():
@@ -249,7 +227,6 @@ for item in acmdata.iterrows():
         item[1]['venue'] = item[1]['year']
         item[1]['year'] = tmp
         print("swap done")
-# print(global_acmdata)
 
 # Check for swapped values, not the case but for completeness
 # now after possible(not in our case but for completeness) swap, create new dict with correct all correct hashes
@@ -267,8 +244,6 @@ for item in acmdata.iterrows():
 # Step 2: candidate matching step, get blocks from both global arrays and compare titles
 hashlist_acmdata = global_acmdata.keys()
 hashlist_dblp2data = global_dblp2data.keys()
-# print(hashlist_acmdata)
-# print(hashlist_dblp2data)
 print("acmdata hash -> venue")
 for ihash in hashlist_acmdata:
     print(ihash)
@@ -293,7 +268,6 @@ for venueHash in hashlist_acmdata:
         else:
             new_acmdict[venueHash] = []
             new_acmdict[venueHash].append([titlehash, entry])
-# print(new_acmdict)
 
 # Create new dblp2 dict with venue hash, title hash and row object
 new_dbl2dict = {}
@@ -310,7 +284,6 @@ for venueHash in hashlist_dblp2data:
         else:
             new_dbl2dict[venueHash] = []
             new_dbl2dict[venueHash].append([titlehash, entry])
-# print(new_dbl2dict)
 
 # combine hashlists to iterate over all venues
 dblp2data_hashes = []
@@ -329,14 +302,10 @@ result = []
 for ahash in array_hashes:
     for acm in new_acmdict[ahash]:
         for dbl in new_dbl2dict[ahash]:
-            match = ngram.NGram.compare(acm[0], dbl[0], N=ngram_size) #N=2
-            #if match > 0.7:
-            #    print("compare ->" + acm[0] + "<- with ->" + dbl[0] + "<-")
-            #    print("score is " + str(match))
-            #Best macht till now = N=3, 0.62
-            if match > match_percentage: #0.6,N=2
+            match = ngram.NGram.compare(acm[0], dbl[0], N=ngram_size)
+            if match > match_percentage:
                 result.append([dbl[1]['id'], acm[1]['id']])
-            # With hasche of Titles only 886 matches...
+            # With hashes of Titles only 886 matches...
             #if acm[0] == dbl[0]:
             #    print("match")
             #    result.append([dbl[1]['id'], acm[1]['id']])
