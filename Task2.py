@@ -93,7 +93,6 @@ dataset['Score'] = score
 #Transform the idDBPL attribute into number, since those are all unique string values -> into unique numbers in asc order
 dataset['idDBLP'] = range(1,len(dataset)+1) 
 
-
 array = dataset.values
 X = array[:,0:2]
 y = array[:,2] 
